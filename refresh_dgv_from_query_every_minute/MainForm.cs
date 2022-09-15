@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace refresh_dgv_from_query_every_minute
 {
@@ -36,11 +37,16 @@ namespace refresh_dgv_from_query_every_minute
                         DataSource.Add(record);
                     }
                     datagridview.Refresh();
+                    if (_toggleColor = !_toggleColor)
+                        datagridview.BackgroundColor = Color.PaleGreen;
+                    else
+                        datagridview.BackgroundColor = Color.PaleTurquoise;
                 });
                 // Reduced the time interval to make it more testable.
                 await Task.Delay(TimeSpan.FromSeconds(1), token);
             }
         }
+        private bool _toggleColor;
 
         private CancellationTokenSource _cts = new CancellationTokenSource();
         protected override void Dispose(bool disposing)

@@ -5,6 +5,8 @@ My suggestion is that it would make more sense to:
 3. Marshal the query result onto the UI thread to perform the DataGridView update. 
 4. Synchronously wait a Task.Delay of on the background thread before performing the next query.
 
+It is not necessary to click [Run] or to have a run button at all. Just start the polling.
+
 ***
 **Initialize**
 Start the polling in the `MainForm` override of the `Load` event.
