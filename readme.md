@@ -45,3 +45,5 @@ private async Task startPolling(CancellationToken token)
 }
 ```
 
+![Screenshot](https://github.com/IVSoftware/refresh-dgv-from-query-every-minute/blob/master/refresh_dgv_from_query_every_minute/Screenshots/screenshot.png)
+
