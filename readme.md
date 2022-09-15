@@ -41,7 +41,7 @@ private async Task startPolling(CancellationToken token)
             }
             datagridview.Refresh();
         });
-        // Reduced the time interval to make it more testable.
+        // Example uses a reduced time interval to make it more testable.
         await Task.Delay(TimeSpan.FromSeconds(1), token);
     }
 }
